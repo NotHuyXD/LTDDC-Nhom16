@@ -61,7 +61,7 @@ export default function PaymentsPage() {
   };
 
   return (
-    <div style={{ paddingTop: '68px', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
+    <div style={{ paddingTop: 'var(--header-height)', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
       <div className="container" style={{ paddingTop: '32px', paddingBottom: '64px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
           <div>

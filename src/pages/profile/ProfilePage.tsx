@@ -40,7 +40,7 @@ export default function ProfilePage() {
   ];
 
   return (
-    <div style={{ paddingTop: '68px', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
+    <div style={{ paddingTop: 'var(--header-height)', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
       <div className="container" style={{ paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-16)' }}>
         <h1 style={{ fontSize: 'var(--font-size-3xl)', fontWeight: 800, marginBottom: 'var(--space-6)' }}>
           Cài đặt tài khoản

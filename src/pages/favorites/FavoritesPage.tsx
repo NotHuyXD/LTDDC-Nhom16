@@ -25,7 +25,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div style={{ paddingTop: '68px', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
+    <div style={{ paddingTop: 'var(--header-height)', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
       <div className="container" style={{ paddingTop: '32px', paddingBottom: '64px' }}>
         <h1 style={{ fontSize: '1.875rem', fontWeight: 800, marginBottom: '24px' }}>
           Phòng yêu thích ({bookmarks.length})

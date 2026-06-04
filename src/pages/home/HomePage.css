@@ -4,7 +4,7 @@
   min-height: 620px;
   display: flex;
   align-items: center;
-  padding-top: 68px;
+  padding-top: var(--header-height);
   overflow: hidden;
 }
 

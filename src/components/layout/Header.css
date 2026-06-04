@@ -8,7 +8,8 @@
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   transition: all var(--transition-base);
-  height: 68px;
+  height: var(--header-height);
+  padding-top: var(--safe-area-top);
 }
 
 .header-transparent {

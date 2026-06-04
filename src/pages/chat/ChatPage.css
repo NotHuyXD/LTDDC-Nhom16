@@ -3,7 +3,7 @@
    ============================================================ */
 
 .chat-page {
-  padding-top: 68px;
+  padding-top: var(--header-height);
   min-height: 100vh;
   background: var(--bg-secondary);
   display: flex;
@@ -13,7 +13,7 @@
 /* ===================== Container ===================== */
 .chat-container {
   display: flex;
-  height: calc(100vh - 68px);
+  height: calc(100vh - var(--header-height));
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
@@ -496,11 +496,12 @@
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
-  .chat-container { height: calc(100svh - 68px); }
+  .chat-container { height: calc(100svh - var(--header-height)); }
   .chat-sidebar { width: 100%; min-width: unset; border-right: none; }
   .chat-sidebar-hidden-mobile { display: none; }
   .chat-main { width: 100%; }
   .chat-back-btn { display: flex; }
   .chat-quickreply-popup { bottom: 76px; left: 6px; right: 6px; }
   .chat-emoji-picker { bottom: 76px; left: 6px; }
+  .chat-input-area { padding-bottom: calc(12px + var(--safe-area-bottom)); }
 }

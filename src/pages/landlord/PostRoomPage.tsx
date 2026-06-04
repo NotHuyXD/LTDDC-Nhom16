@@ -156,7 +156,7 @@ export default function PostRoomPage() {
   };
 
   return (
-    <div style={{ paddingTop: '68px', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
+    <div style={{ paddingTop: 'var(--header-height)', minHeight: '100vh', background: 'var(--bg-secondary)' }}>
       <div className="container" style={{ paddingTop: '32px', paddingBottom: '64px', maxWidth: '800px' }}>
         <button className="btn btn-ghost" style={{ marginBottom: '16px' }} onClick={() => navigate(-1)}>
           <ArrowLeft size={16} /> Quay lại

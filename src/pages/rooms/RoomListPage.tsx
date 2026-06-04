@@ -164,7 +164,14 @@ export default function RoomListPage() {
             <div className="filter-section">
               <div className="filter-header">
                 <h3>Bộ lọc tìm kiếm</h3>
-                <button className="btn btn-ghost btn-sm" onClick={handleReset}>Xóa tất cả</button>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <button className="btn btn-ghost btn-sm" onClick={handleReset}>Xóa tất cả</button>
+                  {showFilters && (
+                    <button className="btn btn-icon-sm btn-ghost" style={{ display: window.innerWidth <= 768 ? 'flex' : 'none' }} onClick={() => setShowFilters(false)}>
+                      <X size={20} />
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Location */}

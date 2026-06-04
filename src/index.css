@@ -3,6 +3,12 @@
 /* ==================== CSS VARIABLES ==================== */
 :root {
   /* Primary Colors - Electric Indigo / Violet */
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+  --header-height: calc(68px + var(--safe-area-top));
+
   --primary-50: #eef2ff;
   --primary-100: #e0e7ff;
   --primary-200: #c7d2fe;
@@ -157,6 +163,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  overscroll-behavior-y: contain;
 }
 
 a {

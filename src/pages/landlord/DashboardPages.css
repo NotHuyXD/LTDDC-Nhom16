@@ -1,6 +1,6 @@
 /* Dashboard Pages Shared CSS */
 .dashboard-page {
-  padding-top: 68px;
+  padding-top: var(--header-height);
   min-height: 100vh;
   background: var(--bg-secondary);
   padding-bottom: var(--space-16);
