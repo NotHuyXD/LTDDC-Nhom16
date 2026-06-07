@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        app:title="Chi tiết hợp đồng"
+        app:titleTextColor="@color/text_main"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:elevation="4dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Status Banner -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardStatusBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border_light"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trạng thái hợp đồng:"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ĐANG HOẠT ĐỘNG"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_status_badge"
+                            android:backgroundTint="@color/secondary"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                            android:layout_marginStart="12dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Room Information Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border_light"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thông tin phòng trọ"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            android:layout_marginBottom="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="90dp"
+                                android:layout_height="70dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp"
+                                android:layout_marginEnd="12dp">
+                                <ImageView
+                                    android:id="@+id/ivRoomImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:background="#E2E8F0" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvRoomTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tên phòng"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_main"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/tvRoomAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Địa chỉ"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="13sp"
+                                    android:layout_marginTop="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tvRoomArea"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Diện tích: 0 m²"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="13sp"
+                                    android:layout_marginTop="4dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Landlord Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border_light"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bên cho thuê (Chủ nhà)"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvLandlordName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Họ tên: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvLandlordPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Số điện thoại: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvLandlordEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Tenant Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border_light"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bên thuê (Người thuê)"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvTenantName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Họ tên: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvTenantPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Số điện thoại: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvTenantEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email: ..."
+                            android:textColor="@color/text_main"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Terms and Dates Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border_light"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Các điều khoản &amp; Chi phí"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary"
+                            android:layout_marginBottom="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:text="Tiền thuê trọ:"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvMonthlyRent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0đ / tháng"
+                                android:textStyle="bold"
+                                android:textColor="@color/secondary" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:text="Tiền đặt cọc:"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvDepositAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0đ"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_main" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:text="Ngày bắt đầu:"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvStartDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01/01/2026"
+                                android:textColor="@color/text_main" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:text="Ngày kết thúc:"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvEndDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01/01/2027"
+                                android:textColor="@color/text_main" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutSignedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:text="Ngày ký:"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvSignedDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chưa ký"
+                                android:textColor="@color/text_main" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/border_light"
+                            android:layout_marginVertical="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quy định và Điều khoản bổ sung:"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_main"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tvTerms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Không có điều khoản bổ sung."
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Actions block -->
+                <LinearLayout
+                    android:id="@+id/layoutActions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSign"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Ký Hợp Đồng Thuê"
+                        android:backgroundTint="@color/secondary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="12dp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTerminate"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Chấm Dứt Hợp Đồng"
+                        android:textColor="@color/error"
+                        app:strokeColor="@color/error"
+                        app:cornerRadius="12dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateInvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Lập Hóa Đơn Tiền Phòng"
+                        android:backgroundTint="@color/primary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="12dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+    </FrameLayout>
+</LinearLayout>

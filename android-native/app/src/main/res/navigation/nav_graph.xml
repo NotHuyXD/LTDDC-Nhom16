@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_rooms">
+
+    <fragment
+        android:id="@+id/navigation_rooms"
+        android:name="com.example.rentedapp.ui.home.RoomsFragment"
+        android:label="Phòng trọ"
+        tools:layout="@layout/fragment_rooms" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.rentedapp.ui.home.FavoritesFragment"
+        android:label="Đã lưu"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.example.rentedapp.ui.home.ChatFragment"
+        android:label="Tin nhắn"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.rentedapp.ui.home.ProfileFragment"
+        android:label="Cá nhân"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
